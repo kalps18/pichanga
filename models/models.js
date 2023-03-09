@@ -4,7 +4,11 @@ const path = require('path');
 const hbs = require('express-handlebars');
 const session = require('express-session');
 const mysqlSession = require('express-mysql-session');
+const passport = require('passport');
+const flash = require('connect-flash')
+
 const {database} = require('./database.js');
+require('./passport');
 class Server {
 
     //constructor
@@ -57,7 +61,11 @@ class Server {
             resave:false,
             saveUninitialized:false,
             store:mysqlSession(database)
-        }))
+        }));
+        //passport
+        this.app.use(passport.initialize());
+        this.app.use(passport.session());
+        this.app.use(flash());
     }
 
     //rutas
@@ -72,9 +80,6 @@ class Server {
             console.log('Servidor corriendo en puerto', this.port);
         });
     }
-
-
-
 }
 
 module.exports = Server;

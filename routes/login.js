@@ -19,20 +19,20 @@ router.get('/signup', isNotAuthenticated, (req, res) => {
 });
 
 router.post('/signup', passport.authenticate('local.signup', {
-    successRedirect: '/profile',
-    failureRedirect: '/signup',
+    successRedirect: 'home/index',
+    failureRedirect: 'authentication/login',
     failureFlash: true
 }));
 
-// Sign In
+// iniciar session
 router.get('/signin', (req, res) => {
-    res.render('login');
+    res.render('authentication/login');
 });
 
 router.post('/signin', (req, res, next) => {
     passport.authenticate('local.signin', {
-        successRedirect: '/profile',
-        failureRedirect: '/signin',
+        successRedirect: 'home/index',
+        failureRedirect: 'signin',
         failureFlash: true
     })(req, res, next);
 });
