@@ -24,7 +24,7 @@ router.post('/signin', (req, res, next) => {
         successRedirect: 'portal',
         failureRedirect: 'signin',
         failureFlash: true
-    })(req, res, next);
+    })(req, res, next); 
 });
 
 // Crear usuario
