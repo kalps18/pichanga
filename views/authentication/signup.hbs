@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>usuarios</title>
+</head>
+
+<body>
+    <form class="row g-3" action="/account/signup" method="post">
+        <div class="card">
+            <div class="card-body">
+                <div class="row mb-2">
+                    <div class="col-md-4">
+                        <label class="form-label">Apellido Paterno</label>
+                        <input type="text" name="apepaterno" class="form-control">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Apellido Materno</label>
+                        <input type="text" name="apematerno" class="form-control" >
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Nombres</label>
+                        <input type="text" name="nombres" class="form-control" >
+                    </div>
+
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-4">
+                        <label class="form-label">Telefono</label>
+                        <input type="tel" name="telefono" class="form-control">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Correo</label>
+                        <input type="email" name="correo" class="form-control" >
+                    </div>
+                    <div class="col-md-4 col align-self-center">
+                        <div class="form-check">
+                        <input class="form-check-input" name="estado" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">
+                            Estado
+                        </label>
+                    </div>
+                    </div>
+
+                </div>
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <label  class="form-label">Usuario</label>
+                        <input type="text" name="usuario" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <label  class="form-label">Password</label>
+                        <input type="password" name="clave" class="form-control">
+                    </div>
+
+                </div>
+                <div class="col-md-auto text-center">
+                    <button type="submit" class="btn btn-primary">Crear Usuario</button>
+                </div>
+                
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>
